@@ -8,8 +8,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
-  <style>
-
+<style>
 .gm_wrapper{
   z-index: 20;
   width: 300px;
@@ -87,8 +86,8 @@
   display: none;
 }
 
-  </style>
-  <div class="gm_wrapper">
+</style>
+<div class="gm_wrapper">
     <button id="ics" class="gm_close" onclick="$('div.gm_wrapper').css('display', 'none');">    
       <img class="gm_x" src="ics.svg" alt="">
     </button>
@@ -100,22 +99,30 @@
         Are you looking for prescription sunglasses? </a></h2>
       <img id="img" class="gm_img" src="OO-sunglasses.png" alt="">
     </div>
-  </div>
+</div>
   <script >
-
-$(document).ready(function(){
-  $(document).on('mouseenter','div.gm_banner', function(event){
-    $("#img").css("display", "block");
-    $("div.gm_banner a").text("Men's sport  prescription sunglasses are available now.")
-    $("#ics").toggleClass("gm_hover");
-    $("#ics_hover").toggleClass("gm_hover");})
-    .on('mouseleave','div.gm_banner', function(event){
+  
+    $('div.gm_banner')
+    .mouseover(function(ev){
+      $("#img").css("display", "block");
+      $("div.gm_banner a").text("Men's sport  prescription sunglasses are available now.")
+      $("#ics").toggleClass("gm_hover");
+      $("#ics_hover").toggleClass("gm_hover");
+      if($("#liveChatBaloon").hasClass("active")){
+        $("#liveChatBaloon").css("bottom","155px");
+      }
+    })
+    .mouseout(function(ev) {
       $("#img").css("display", "none");
       $("div.gm_banner a").text("Are you looking for prescription sunglasses?")
       $("#ics").toggleClass("gm_hover");
       $("#ics_hover").toggleClass("gm_hover");
-  });
-});
+      if($("#liveChatBaloon").hasClass("active")){
+        $("#liveChatBaloon").css("bottom","");
+      }
+    })
+  
   </script>
+
 </body>
 </html>
