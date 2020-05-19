@@ -1,0 +1,3 @@
+$("#UtagOrderAmt").parent().after('<style>.gm_wrapper{display:flex;box-shadow: 0 1px 0 #dadada;}.gm_wrapper .cart-engr-desk__policy{color: #555;font-size: 10px;margin-top: 14px;}.gm_wrapper .cart-engr-desk__policy a{text-decoration:underline;}.gm_free{font-weight: 500;}.gm_wrapper > div{text-align:center; padding:10px;}.gm_wrapper img{width:50px;align-self:center;margin:10px;}</style><div class="gm_wrapper"><img src="//images.sunglasshut.com/resource/blob/40024/3237cae57e7bdd5873a36d9e01290466/easy-return-icon-data.png" alt="EASY RETURN ICON"><div><h2 class="gm_free" id="gm_free">FREE RETURNS!*</h2></div></div>');
+$('#gm_free').after($('div.cart-engr-desk__policy'));
+
