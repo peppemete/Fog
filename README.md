@@ -134,3 +134,34 @@ https://spd-master-web.github.io/Fog/OO-Prescription_popup/popup.html
 #### JS file
 https://spd-master-web.github.io/Fog/OO-Prescription_popup/popup.js
 
+
+## SGH - Free reuturns info on Cart page
+
+We need to add a little section that remember the free reurns to the user under the costs column
+
+#### Before
+![](SGH-Free_returns/SGH-Free_returns_before.png)
+
+#### After
+![](SGH-Free_returns/SGH-Free_returns_test.png)
+
+
+Steps to achieve this:
+- Create the label with HTML 
+- Add CSS 
+- Add all into the document with the .after() jQuery API
+- Move the Policy in the new section
+
+Example code for the append
+    
+    $("#total").after("
+        <style>...</style>
+        <div id="popup">...</div>");
+    $("new_place").after("policy");
+
+#### HTML test file
+https://spd-master-web.github.io/Fog/SGH-Free_returns/freereturn.html
+
+#### JS file
+https://spd-master-web.github.io/Fog/SGH-Free_returns/freereturn.js
+
