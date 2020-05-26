@@ -94,6 +94,7 @@ https://spd-master-web.github.io/Fog/RB-Prescription_banner/popup.html
 #### JS file
 https://spd-master-web.github.io/Fog/RB-Prescription_banner/popup.js
 
+---
 
 ## OO - Prescription sunglasses popup
 
@@ -134,6 +135,67 @@ https://spd-master-web.github.io/Fog/OO-Prescription_popup/popup.html
 #### JS file
 https://spd-master-web.github.io/Fog/OO-Prescription_popup/popup.js
 
+---
+
+## OO - Prescription sunglasses popup
+
+We need to add the colors thumbnails also in mobile
+
+#### Before
+![](OO-thumbnails_on_PLP_mobile/OO-thumbnails_on_PLP_mobile_before.png)
+
+#### After
+![](OO-thumbnails_on_PLP_mobile/OO-thumbnails_on_PLP_mobile_test.png)
+
+
+Steps to achieve this:
+- Learn how the thumbnails are on Desktop:
+    On desktop the thumbnails are formed by 'href' item, inside a div .owl-item, all thumbnails for each product are inside a list div
+    1. .owl-wrapper 
+    2. .owl-wrapper-outer
+    3. .colors-carousel_items
+    4. .colors-carousel
+- Learn how is formed the Mobile page:
+    in the mobile HTML page for each product, are present the list of 'href' thumbnails directly inside .colors-carousel_items div, with display:none, 
+    and also .colors-carousel_items div has a property display:none.
+
+- Insert the single thumbnail inside .owl-item div
+- Insert the list of thumbnail for each product inside the .colors-carousel_items and .colors-carousel divs
+- fix the all properties like display, background, and overflow (to make scrollable the thumbnails list).
+
+- On thumbnail click change the main product picture and price
+
+- On button click to see other product wait for the charging and redo the function
+
+Example code 
+    
+    $("a.thumbnail").wrap("<div class='.owl-item'>");
+    $("product").each({
+        $('.owl-item').wrapAll("<div class='.owl-wrapper><div class='.owl-wrapper-outer>")
+    })
+    $(".owl-wrapper").css("...)
+    $(".owl-wrapper-outer").css("...)
+    $(".colors-carousel_items").css("...)
+    $(".colors-carousel").css("...)
+
+    $(a.thumbnail).on(click, function(){
+        new_price=$(a.thumbnail).attr(price)
+        new_img=$(a.thumbnail).attr(img)
+        new_link=$(a.thumbnail).attr(link)
+        $("product").find("primary_img").css(background, new_img)
+        $("product").find("primary_img").attr(href, new_link)
+        $("product").find("price").text(new_price)
+    })
+
+    $("button").on(touchend, function(){
+        setTimeout(function(){ redo(); }, 3500);
+    })
+    
+
+#### JS file
+https://spd-master-web.github.io/Fog/OO-thumbnails_on_PLP_mobile/OO-thumbnails_on_PLP_mobile.js.js
+
+---
 
 ## SGH - Free reuturns info on Cart page
 
