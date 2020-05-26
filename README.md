@@ -96,6 +96,37 @@ https://spd-master-web.github.io/Fog/RB-Prescription_banner/popup.js
 
 ---
 
+
+## RB - Cosutomization button on top
+
+We need to move the customization button on top of the shop button
+
+#### Before
+![](RB-Customization_on_top/RB-Customization_on_top-before.png)
+
+#### After
+![](RB-Customization_on_top/RB-Customization_on_top-test.png)
+
+
+Steps to achieve this:
+- Remove some space
+- Make the container flex
+- Set the order
+
+Example code for the hover
+
+    $(space).css("display","none");
+    $(container).css("display","flex");
+    $(size).css("order","0");
+    $(shop.css("order","2");
+
+
+
+#### JS file
+https://spd-master-web.github.io/Fog/RB-Customization_on_top/RB-Customization_on_top.js
+
+---
+
 ## OO - Prescription sunglasses popup
 
 We need to add the hover popup in a bottom-right corner
